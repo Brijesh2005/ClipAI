@@ -1,0 +1,51 @@
+.page { padding: 32px; max-width: 800px; }
+.heading { font-family: 'Bebas Neue', sans-serif; font-size: 28px; letter-spacing: 1px; margin-bottom: 24px; }
+.empty { display: flex; flex-direction: column; align-items: center; gap: 12px; padding: 60px; color: var(--muted); }
+.list { display: flex; flex-direction: column; gap: 8px; }
+
+.jobRow {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 14px 16px;
+  transition: border-color 0.15s;
+  position: relative;
+}
+.jobRow:hover { border-color: var(--border2); }
+
+.jobIcon {
+  width: 36px; height: 36px;
+  background: var(--surface2);
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--muted);
+  flex-shrink: 0;
+}
+
+.jobInfo { flex: 1; overflow: hidden; }
+.jobTitle { font-size: 13.5px; font-weight: 500; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.jobMeta { display: flex; gap: 12px; font-size: 11px; color: var(--muted); margin-top: 3px; }
+.jobMeta span { display: flex; align-items: center; gap: 4px; }
+
+.jobStatus { font-size: 11px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px; }
+
+.miniBar { position: absolute; bottom: 0; left: 0; right: 0; height: 2px; background: var(--surface2); border-radius: 0 0 10px 10px; overflow: hidden; }
+.miniBarFill { height: 100%; background: var(--accent); transition: width 0.5s; }
+
+.deleteBtn {
+  background: none;
+  border: none;
+  color: var(--muted);
+  padding: 4px;
+  border-radius: 6px;
+  opacity: 0;
+  transition: all 0.15s;
+  flex-shrink: 0;
+}
+.jobRow:hover .deleteBtn { opacity: 1; }
+.deleteBtn:hover { background: rgba(255,92,92,0.15); color: var(--accent2); }

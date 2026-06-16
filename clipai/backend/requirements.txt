@@ -1,0 +1,10 @@
+fastapi==0.115.0
+uvicorn[standard]==0.30.6
+pydantic==2.8.2
+openai==1.47.0
+anthropic==0.34.2
+yt-dlp==2024.9.27
+python-multipart==0.0.12
+aiofiles==24.1.0
+# Local mode (optional — install only if you want zero API costs)
+# faster-whisper==1.0.3

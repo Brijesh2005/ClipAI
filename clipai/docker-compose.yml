@@ -1,0 +1,50 @@
+# ─── Cloud Mode (default) ─────────────────────────────────────────────────────
+# docker-compose up --build
+#
+# ─── Local Mode (no API keys) ────────────────────────────────────────────────
+# 1. First start Ollama separately and pull a model:
+#    ollama serve
+#    ollama pull llama3.1
+#
+# 2. Then start the app with the local profile:
+#    docker-compose --profile local up --build
+#
+# The backend in both cases is the same — the mode is chosen per-job in the UI.
+
+services:
+  backend:
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+    ports:
+      - "8000:8000"
+    volumes:
+      - ./outputs:/app/outputs
+    environment:
+      - PYTHONUNBUFFERED=1
+    extra_hosts:
+      # Allows the container to reach Ollama running on the host machine
+      - "host.docker.internal:host-gateway"
+    restart: unless-stopped
+
+  frontend:
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
+    ports:
+      - "5173:80"
+    depends_on:
+      - backend
+    restart: unless-stopped
+
+  # ── Local-mode helper: installs faster-whisper into the backend ─────────────
+  # Runs once and exits. Only needed if you want local Whisper inside Docker.
+  # Usage: docker-compose --profile local up
+  install-local-deps:
+    profiles: [local]
+    image: python:3.11-slim
+    volumes:
+      - ./backend:/app
+    working_dir: /app
+    command: pip install --no-cache-dir faster-whisper -t /app/site-packages
+    restart: "no"

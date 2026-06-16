@@ -1,0 +1,100 @@
+.page { padding: 32px; max-width: 900px; }
+
+.header { display: flex; align-items: flex-start; justify-content: space-between; margin-bottom: 20px; }
+.heading { font-family: 'Bebas Neue', sans-serif; font-size: 30px; letter-spacing: 1px; }
+.sub { font-size: 13px; color: var(--muted); margin-top: 4px; }
+
+.newBtn {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 10px 18px;
+  background: var(--accent);
+  color: #0a0a0f;
+  border-radius: 8px;
+  font-size: 13px;
+  font-weight: 700;
+  transition: background 0.15s;
+  flex-shrink: 0;
+}
+.newBtn:hover { background: #d6eb3a; }
+
+.setupBanner {
+  background: rgba(232,255,71,0.06);
+  border: 1px solid rgba(232,255,71,0.2);
+  border-radius: 10px;
+  padding: 12px 16px;
+  font-size: 13px;
+  margin-bottom: 16px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.setupLink { color: var(--accent); font-weight: 600; margin-left: auto; }
+
+.healthRow { display: flex; gap: 10px; margin-bottom: 20px; flex-wrap: wrap; }
+.healthChip {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 11px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  padding: 4px 10px;
+  border-radius: 6px;
+}
+.healthDot { width: 6px; height: 6px; border-radius: 50%; }
+
+.statsRow {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 12px;
+  margin-bottom: 28px;
+}
+
+.statCard {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+.statVal { font-family: 'Bebas Neue', sans-serif; font-size: 28px; letter-spacing: 1px; line-height: 1; }
+.statLabel { font-size: 11px; color: var(--muted); }
+
+.section { display: flex; flex-direction: column; gap: 8px; }
+.sectionHeader { display: flex; justify-content: space-between; align-items: center; font-size: 13px; font-weight: 500; margin-bottom: 4px; }
+.seeAll { display: flex; align-items: center; gap: 4px; font-size: 12px; color: var(--muted); transition: color 0.15s; }
+.seeAll:hover { color: var(--accent); }
+
+.emptyCard {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  padding: 48px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  color: var(--muted);
+  font-size: 13px;
+}
+.cta { color: var(--accent); font-size: 13px; }
+
+.jobRow {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 12px 16px;
+  transition: border-color 0.15s;
+}
+.jobRow:hover { border-color: var(--border2); }
+.jobTitle { flex: 1; font-size: 13px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.jobRight { display: flex; align-items: center; gap: 12px; flex-shrink: 0; }
+.clipsCount { font-size: 11px; color: var(--muted); }
+.statusBadge { font-size: 10px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px; }
